@@ -1,0 +1,34 @@
+
+
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+   String uri = req.getRequestURI();
+   String[] uriTokens = uri.split("/");
+   System.out.println(Arrays.toString(uriTokens));
+   out.println("URI Tokens Number: " + uriTokens.length);
+   // resp.getWriter().println("URI Tokens Number: " + uriTokens.length);
+   //resp.getWriter().println(Arrays.toString(uriTokens));
+
+   if(uriTokens.length <=3) {
+       resp.sendError(400);
+   }
+   else{
+       req.setAttribute("table",uriTokens[2]);
+       LinkedList data = new LinkedList();
+       for (int i = 3; i < uriTokens.length; i++) {
+           data.add(uriTokens[i]);
+       }
+       req.setAttribute("data",data);
+   }
+try
+ec.insert(req,resp)
+
+}
+
+public void addEntity(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+   Entities existing = new Entities();
+   LinkedList<String> data = request.getAttribute("data");
+   Entity table = existing.getTableByName(request.getAttribute("table").toString());
+   Row r = EntitiesSQL.insertRow(table,data);
+   response.getWriter().append((r != null) ? gson.toJson(r) : "{}");
+}
+
