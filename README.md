@@ -34,8 +34,8 @@ Check and change the url format in the utilities/ConnectionToDB to the appropria
 To Test the ORM with the available JUnit 5 Test folder. Create three tables in your RDBMS with the provided SQL Script, add some dummy data and then run the test class.
 
 # Usage
-This Custom_ORM was used to create a basic Restaurant Reservation web application with Servlets link: https://github.com/Milanoboy20/Restaurant_Reservation_Web_App_p1
+This Custom_ORM was used to create basic web application with Servlets link: https://github.com/cagriffin13/Custom-Object-Relational-Mapping-Framework
 
 # Contributors
-Abdul Samad Sadat: https://github.com/cagriffin13
-Micheal Ord: https://github.com/dominic_scanga_p0
+Clyde Griffin: https://github.com/cagriffin13
+Dominic Scanga: https://github.com/dominic_scanga_p1
